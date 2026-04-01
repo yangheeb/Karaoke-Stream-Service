@@ -92,6 +92,47 @@ public class KaraokeStreamService {
                         I'm_singing_my_blues
                         뜬구름에_날려보낸_사랑_oh_oh
                     """));
+        songList.add(new Song(
+                3, "알록달록", "잔나비",
+                """
+                        알록달록_입맞춤,_시시뻘건_춤사위
+                        원하는걸_줄테니,_솔직한걸_말해줘
+                        My_girl,_my_girl,_such_a_pretty_baby_(yeah)
+                        솔직한걸_말해줘
+                        늘_걷던_꿈길을_나와_함께_뒤척이면
+                        Hold_me_now,_hold_me_tight,_don't_let_me_go
+                        별_볼일_없었던_내_일요일_밤중에도
+                        Love_me_now,_love_me_tight,_don't_let_me_go
+                        Tell_me_what_you_gonna_do
+                        나와_함께_해주오
+                        Tell_me_what_you_wanna_do
+                        모두_내게_말해줘,_oh,_oh
+                        알록달록_입맞춤,_시시뻘건_춤사위
+                        원하는걸_줄테니,_솔직한걸_말해줘
+                        My_girl,_my_girl,_such_a_pretty_baby_(yeah)
+                        솔직한걸_말해줘
+                        My_girl,_my_girl,_such_a_pretty_baby_(yeah)
+                        그대_날_알아주오,_내게_믿음을_주오
+                        Hold_me_now,_hold_me_tight,_don't_let_me_go
+                        거칠을_쇠소리에_내_귀를_닫아주오
+                        Love_me_now,_love_me_tight,_don't_let_me_go
+                        Tell_me_what_you_gonna_do
+                        나와_함께_해주오
+                        Tell_me_what_you_wanna_do
+                        모두_내게_말해줘,_oh,_oh
+                        알록달록_입맞춤,_시시뻘건_춤사위
+                        원하는걸_줄테니,_솔직한걸_말해줘
+                        My_girl,_my_girl,_such_a_pretty_baby_(yeah)
+                        솔직한걸_말해줘
+                        Oh,_yeah
+                        My_girl,_my_girl,_such_a_pretty_baby_(oh,_yeah)
+                        Such_a_pretty_baby_(yeah)
+                        알,_알,_알,_알
+                        알록달록_입맞춤,_시시뻘건_춤사위
+                        원하는걸_줄테니,_솔직한걸_말해줘
+                        My_girl,_my_girl,_such_a_pretty_baby_(yeah)
+                        솔직한걸_말해줘
+                    """));
     }
 
     public Flux<String> streamSongLyric(int id) {
