@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: webflux-reactive-streams-test
+
+logging:
+  level:
+    com:
+      example: info
+    reactor:
+      core : info
