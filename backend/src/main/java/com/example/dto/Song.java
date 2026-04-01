@@ -14,4 +14,24 @@ public class Song {
         this.imageUrl = imageUrl;
         this.lyric = lyric;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSinger() {
+        return singer;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getLyric() {
+        return lyric;
+    }
 }

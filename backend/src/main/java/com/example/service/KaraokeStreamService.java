@@ -16,11 +16,14 @@ import reactor.core.publisher.Flux;
 public class KaraokeStreamService {
 
     private static final Logger log = LoggerFactory.getLogger(KaraokeStreamService.class);
-    private static final List<String> songs = new ArrayList<>();
-    private static final List<Song> songList = new ArrayList<>();
+    private final List<String> songs = new ArrayList<>();
+    private final List<Song> songList;
 
     public KaraokeStreamService() {
-        songs.add("""
+        songList = new ArrayList<>();
+        songList.add(new Song(
+                0, "사랑하게 될거야", "한로로", "https://image.bugsm.co.kr/album/images/500/205869/20586963.jpg",
+                """
                 영원을 꿈꾸던 널 떠나보내고 슬퍼하던 날까지도 떠나보냈네 
                 오늘의 나에게 남아있는 건 피하지 못해 자라난 무던함뿐야 
                 그곳의 나는 얼마만큼 울었는지 이곳의 나는 누구보다 잘 알기에 후회로 가득 채운 유리잔만 내려다보네 
@@ -33,14 +36,14 @@ public class KaraokeStreamService {
                 아 뭐가 그리 샘이 났길래 그토록 휘몰아쳤던가 
                 그럼에도 불구하고 나는 너를 용서하고 사랑하게 될 거야 
                 사랑하게 될 거야
-                """);
+                """));
     }
 
     public Flux<String> streamSongLyric(int id) {
-        if (id < 0 || id >= songs.size()) {
+        if (id < 0 || id >= songList.size()) {
             throw new RuntimeException("그런 노래 없음");
         }
-        String song = songs.get(id);
+        String song = songList.get(id).getLyric();
 
         return Flux.range(0, song.length())
                 .map(index -> String.valueOf(song.charAt((index))))

@@ -31,7 +31,7 @@ public class KaraokeController {
                         .build());
     }
 
-    @GetMapping(value = "/song")
+    @GetMapping(value = "/songs")
     public ResponseEntity<List<Song>> getSongList() {
         List<Song> response = karaokeStreamService.getSongList();
         return ResponseEntity.ok(response);
