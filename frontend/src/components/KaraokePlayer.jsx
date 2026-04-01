@@ -58,8 +58,12 @@ export default function KaraokePlayer({ song, onBack }) {
         return []
       })
     } else {
-      // 일반 글자: 현재 줄에 추가
-      setCurrentChars(prev => [...prev, char])
+      if (char === '_') {
+        setCurrentChars(prev => [...prev, ' '])
+      } else {
+        // 일반 글자: 현재 줄에 추가
+        setCurrentChars(prev => [...prev, char])
+      }
     }
   }, [items])
 
@@ -163,6 +167,8 @@ export default function KaraokePlayer({ song, onBack }) {
 
       {/* 가사 영역 */}
       <div style={{
+        whiteSpace: 'pre-wrap', // ✨ 띄어쓰기와 줄바꿈을 모두 서버에서 온 그대로 렌더링함
+        wordBreak: 'break-all', // (추가 팁) 띄어쓰기가 없어도 박스 끝에 닿으면 줄바꿈 되도록 설정
         background: '#111', borderRadius: '16px',
         padding: '32px', minHeight: '320px', maxHeight: '400px',
         overflowY: 'auto', display: 'flex', flexDirection: 'column',
@@ -173,6 +179,7 @@ export default function KaraokePlayer({ song, onBack }) {
           <p key={i} style={{
             margin: 0, color: '#383838', fontSize: '18px',
             fontFamily: 'system-ui, sans-serif', lineHeight: '1.5',
+            whiteSpace: 'pre-wrap' // ✨ 여기에 추가!
           }}>
             {line}
           </p>
@@ -183,6 +190,7 @@ export default function KaraokePlayer({ song, onBack }) {
           margin: 0, color: '#f0f0f0', fontSize: '24px', fontWeight: '500',
           fontFamily: 'system-ui, sans-serif', lineHeight: '1.5',
           borderLeft: `3px solid ${ACCENT}`, paddingLeft: '16px', minHeight: '36px',
+          whiteSpace: 'pre-wrap' // ✨ 여기에 추가!
         }}>
           {currentLine}
           <span style={{
