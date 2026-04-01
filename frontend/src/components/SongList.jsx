@@ -51,7 +51,7 @@ export default function SongList({ songs, onSelect }) {
               transition: 'border-color 0.15s, background 0.15s, transform 0.1s',
             }}
           >
-            <p style={{
+            {/* <p style={{
               fontSize: '20px',
               fontWeight: '500',
               color: ACCENT,
@@ -59,7 +59,7 @@ export default function SongList({ songs, onSelect }) {
               letterSpacing: '1px',
             }}>
               {song.number}
-            </p>
+            </p> */}
             <p style={{
               fontSize: '14px',
               color: '#e0e0e0',

@@ -25,8 +25,8 @@ export default function KaraokePlayer({ song, onBack }) {
 
   // useSSE: 재생 단계에서만 활성화
   const { items, connected, error } = useSSE(
-    `/api/karaoke/songs/${song.id}/lyrics/stream`,
-    'lyric-char',
+    `/api/karaoke/song/${song.id}`,
+    'lyric',
     phase === 'playing'
   )
 
