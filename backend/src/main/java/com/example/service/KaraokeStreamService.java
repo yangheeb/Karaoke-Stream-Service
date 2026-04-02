@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.dto.ErrorResponseDto;
 import com.example.dto.Song;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,6 @@ import reactor.core.publisher.Flux;
 public class KaraokeStreamService {
 
     private static final Logger log = LoggerFactory.getLogger(KaraokeStreamService.class);
-    private final List<String> songs = new ArrayList<>();
     private final List<Song> songList;
 
     public KaraokeStreamService() {
@@ -151,7 +151,6 @@ public class KaraokeStreamService {
                         거칠_것이_없었던_내_모습은_어디로_사라졌을까_어느_틈에
                         작은_일에도_늘_행복했었던
                         예전_그대로의_모습_찾고_싶어
-                        
                         찬란하게_빛나던_내_모습은_어디로_날아갔을까_어느 별로
                         작은_일에도_날_설레게_했던
                         내_안의_그_무언가는_어느_별에_묻혔나
@@ -161,6 +160,7 @@ public class KaraokeStreamService {
                         작은_일에도_늘_행복했었던
                         예전_그대로의_모습_다시_찾고만_싶어
                     """));
+        log.info("노래 {}곡 추가 완료", songList.size());
     }
 
     public Flux<String> streamSongLyric(int id) {
@@ -168,6 +168,7 @@ public class KaraokeStreamService {
             throw new RuntimeException("그런 노래 없음");
         }
         String song = songList.get(id).getLyric();
+        log.info("노래({}) 선택 완료", songList.get(id).getTitle());
 
         return Flux.range(0, song.length())
                 .map(index -> String.valueOf(song.charAt((index))))
