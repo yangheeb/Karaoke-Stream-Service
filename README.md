@@ -3,6 +3,8 @@
 Spring WebFlux(Reactive Stream) 기반 가라오케 가사 스트리밍 서비스입니다.
 노래 가사를 글자 단위로 SSE(Server-Sent Events)를 통해 실시간 전송하고, React 프론트엔드에서 노래방 화면처럼 렌더링합니다.
 
+<img src="https://github.com/user-attachments/assets/03916321-8fbb-4e29-9b63-a2917e9ef1ef" >
+
 ---
 
 ## 기술 스택
